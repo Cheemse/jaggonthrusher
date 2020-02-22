@@ -1,0 +1,18 @@
+static int search(int[] array, int key)
+{
+    int left = 0;
+    int right = array.Length;
+
+    while (true)
+    {
+        int mid = left + (right - left) / 2;
+
+        if (array[mid] == key)
+            return mid;
+
+        if (array[mid] > key)
+            right = mid;
+        else
+            left = mid + 1;
+    }
+}
